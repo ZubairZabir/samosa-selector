@@ -1,51 +1,147 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main container styling */
 .App {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
   text-align: center;
+  padding: 20px;
 }
 
-.header {
-  margin: 20px;
+/* Header styling */
+.header h1 {
+  font-size: 2.5em;
+  color: #ff5722;
+  margin-bottom: 10px;
 }
 
+.header h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Samosa image styling */
 .samosa {
-  height: 15em;
-  padding: 1.5em;
+  width: 100px;
+  height: 100px;
   margin: 20px auto;
-  display: block;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .samosa:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .samosa:active {
-  transform: scale(0.95);
+  transform: scale(1.1);
 }
 
+/* Container for the upgrades */
 .container {
-  margin-top: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 30px;
 }
 
+/* Individual upgrade card styling */
 .upgrade {
-  border: 1px solid rgba(153, 153, 153, 0.497);
-  padding: 20px 10px;
-  margin-right: 25px;
-  width: 200px;
-  text-align: center;
+  background-color: #ffeb3b;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(33.333% - 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.upgrade:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.upgrade h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #e64a19;
+}
+
+.upgrade p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .upgrade button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.3em 1em;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
   font-size: 1em;
-  font-weight: 500;
-  background-color: #1a1a1a;
-  color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
-  margin-top: 10px;
-  font-family: inherit;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.upgrade button:hover {
+  background-color: #e64a19;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .upgrade {
+    width: 100%;
+  }
+
+  .samosa {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .header h2 {
+    font-size: 1.2em;
+  }
+
+  .samosa {
+    width: 70px;
+    height: 70px;
+  }
 }
